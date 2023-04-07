@@ -153,25 +153,19 @@ contract NftMarketplace is ReentrancyGuard {
     ) {
         IERC721 nft = IERC721(nftAddress);
         address owner = nft.ownerOf(tokenId);
-        if (spender != owner) {
-            revert NotOwner();
-        }
+        if (spender != owner) revert NotOwner();
         _;
     }
 
     modifier isListed(address nftAddress, uint256 tokenId) {
         Listing memory listing = s_listings[nftAddress][tokenId];
-        if (listing.price <= 0) {
-            revert NotListed(nftAddress, tokenId);
-        }
+        if (listing.price <= 0) revert NotListed(nftAddress, tokenId);
         _;
     }
 
     modifier notListed(address nftAddress, uint256 tokenId) {
         Listing memory listing = s_listings[nftAddress][tokenId];
-        if (listing.price > 0) {
-            revert AlreadyListed(nftAddress, tokenId);
-        }
+        if (listing.price > 0) revert AlreadyListed(nftAddress, tokenId);
         _;
     }
 
