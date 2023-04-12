@@ -1,8 +1,9 @@
 const { ethers, network } = require("hardhat")
+const { motherContract } = require("../helper-hardhat-config")
 const { moveBlocks } = require("../utils/move-blocks")
 
 async function mint() {
-    const basicNft = await ethers.getContract("BasicNftTwo")
+    const basicNft = await ethers.getContractAt("BasicNftTwo", motherContract)
     console.log("Minting NFT...")
     const mintTx = await basicNft.mintNft()
     const mintTxReceipt = await mintTx.wait(1)

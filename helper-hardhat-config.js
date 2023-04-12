@@ -14,8 +14,10 @@ const networkConfig = {
 }
 
 const developmentChains = ["hardhat", "localhost"]
+const motherContract = "0x838EC8107fE7F57ea44df334e62444E8Adb01353"
 
 module.exports = {
     networkConfig,
     developmentChains,
+    motherContract,
 }
