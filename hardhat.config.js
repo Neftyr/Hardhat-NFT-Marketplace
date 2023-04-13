@@ -79,6 +79,7 @@ module.exports = {
     etherscan: {
         // npx hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
         apiKey: {
+            goerli: ETHERSCAN_API_KEY,
             sepolia: ETHERSCAN_API_KEY,
             polygon: POLYGONSCAN_API_KEY,
         },
