@@ -14,10 +14,10 @@ const networkConfig = {
 }
 
 const developmentChains = ["hardhat", "localhost"]
-const motherContract = "0x838EC8107fE7F57ea44df334e62444E8Adb01353"
+const nftMarketplaceMother = "0xC15527907cdA4B866D501a200D80DbbA28880266"
 
 module.exports = {
     networkConfig,
     developmentChains,
-    motherContract,
+    nftMarketplaceMother,
 }
