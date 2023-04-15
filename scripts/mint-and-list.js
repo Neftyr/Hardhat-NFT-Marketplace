@@ -1,10 +1,11 @@
 const { ethers, network } = require("hardhat")
+const { nftMarketplaceMother } = require("../helper-hardhat-config")
 const { moveBlocks } = require("../utils/move-blocks")
 
 const PRICE = ethers.utils.parseEther("0.1")
 
 async function mintAndList() {
-    const nftMarketplace = await ethers.getContract("NftMarketplace")
+    const nftMarketplace = await ethers.getContractAt("NftMarketplace", nftMarketplaceMother)
     // Below will throw 0 or 1
     const randomNumber = Math.floor(Math.random() * 2)
     let basicNft
